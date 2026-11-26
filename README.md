@@ -96,6 +96,7 @@ SKILL.md                 Agent instructions and on-demand preset indexes
 README.md                English quick start
 README.zh-CN.md          Chinese quick start
 requirements.txt         Python dependency declaration
+LICENSE                  MIT license text
 agents/                  Optional skill UI metadata
 skill/                   30 complete visual style presets
 formats/                 6 independent image-format presets
@@ -106,4 +107,8 @@ tests/                   Offline execution and resource tests
 output/                  Local run artifacts; ignored by Git
 ```
 
-Add a style or format file and update its index in `SKILL.md`; run the tests to check consistency. To support a different API protocol, add its request/response adapter and corresponding tests. A public-release license has not been selected yet.
+Add a style or format file and update its index in `SKILL.md`; run the tests to check consistency. To support a different API protocol, add its request/response adapter and corresponding tests.
+
+## License
+
+Released under the [MIT License](LICENSE). You may use, modify, and redistribute this project, including commercially, provided you retain the copyright and permission notices. The software is provided without warranty; see the license for the full terms.
