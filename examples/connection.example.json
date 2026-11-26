@@ -1,0 +1,7 @@
+{
+  "adapter": "",
+  "base_url": "",
+  "model": "",
+  "api_key_env": "IMAGE_API_KEY",
+  "request_defaults": {}
+}

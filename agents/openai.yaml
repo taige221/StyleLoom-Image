@@ -1,0 +1,3 @@
+interface:
+  display_name: "StyleLoom Image"
+  short_description: "Create images across styles with configurable backends"
