@@ -232,7 +232,8 @@ def http(url, headers, body, timeout):
     with tempfile.TemporaryDirectory(prefix="image-request-") as directory:
         directory = Path(directory)
         response_path = directory / "response"
-        command = ["curl", "--silent", "--show-error", "--connect-timeout", "20", "--max-time", str(timeout), "--header", "@-", "--output", str(response_path), "--write-out", "%{http_code}"]
+        # Keep local curl configuration from enabling paid-request retries.
+        command = ["curl", "-q", "--silent", "--show-error", "--connect-timeout", "20", "--max-time", str(timeout), "--header", "@-", "--output", str(response_path), "--write-out", "%{http_code}"]
         if body is not None:
             payload_path = directory / "request"
             payload_path.write_bytes(body)

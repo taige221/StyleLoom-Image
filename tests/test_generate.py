@@ -2,8 +2,11 @@ import base64
 import importlib.util
 import io
 import json
+import os
 import tempfile
+import threading
 import unittest
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from types import SimpleNamespace
 from pathlib import Path
 from unittest.mock import patch
@@ -202,6 +205,37 @@ class GenerateTests(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertEqual(body, b'{"data":[]}')
         self.assertTrue(all(not path.exists() for path in paths))
+
+    def test_curl_config_cannot_enable_generation_retries(self):
+        class Handler(BaseHTTPRequestHandler):
+            requests_seen = 0
+
+            def do_POST(self):
+                self.rfile.read(int(self.headers.get("Content-Length", "0")))
+                Handler.requests_seen += 1
+                self.send_response(503)
+                self.end_headers()
+                self.wfile.write(b'{}')
+
+            def log_message(self, *args):
+                pass
+
+        curl_home = self.root / "curl-config"
+        curl_home.mkdir()
+        (curl_home / ".curlrc").write_text("retry = 1\nretry-delay = 1\n")
+        server = HTTPServer(("127.0.0.1", 0), Handler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            with patch.dict(os.environ, {"CURL_HOME": str(curl_home), "NO_PROXY": "*", "no_proxy": "*"}):
+                status, body = generate.http(f"http://127.0.0.1:{server.server_port}/images", {}, b'{}', 5)
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join()
+        self.assertEqual(status, 503)
+        self.assertEqual(body, b'{}')
+        self.assertEqual(Handler.requests_seen, 1)
 
     def test_bad_image_preserves_reported_cost_without_retry(self):
         with patch.object(generate, "http", return_value=self.response(b"not-an-image", usage={"cost": 0.02})) as call:
