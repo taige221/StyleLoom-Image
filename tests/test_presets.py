@@ -68,7 +68,7 @@ class PresetTests(unittest.TestCase):
 
     def test_distributed_markdown_links_do_not_require_local_artifacts(self):
         paths = [ROOT / "README.md", ROOT / "README.zh-CN.md", ROOT / "SKILL.md"]
-        for directory in ["references", "skill", "formats"]:
+        for directory in ["references", "skill", "formats", "examples"]:
             paths.extend((ROOT / directory).glob("*.md"))
         local_only = {"output", "tmp", ".local", ".venv", ".git"}
         for path in paths:

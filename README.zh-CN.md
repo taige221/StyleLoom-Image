@@ -6,6 +6,8 @@
 
 加载 Skill 的 AI 读取 [SKILL.md](SKILL.md)，按需选择风格与用途，组织完整提示词。Python 执行器将准备好的任务发送到配置的图像接口，保存原图、提示词、参数及接口返回的用量和费用。
 
+查看 [1—30 风格图片示例](examples/style-gallery.md)：每种风格一张代表图，图注注明模型与提示词阶段，并链接到当前英文风格预设。
+
 ## 支持能力
 
 - 纯文字生成、参考图引导生成，以及按明确保留项修改原图。
@@ -101,7 +103,7 @@ agents/                  可选的 Skill 界面展示信息
 skill/                   30 份完整画风预设
 formats/                 6 份独立图片用途预设
 scripts/generate.py      可配置图像 API 执行器
-examples/                空白连接模板与完整任务示例
+examples/                风格画廊、代表图片与任务示例
 references/              执行说明、测试提示词、验证摘要
 tests/                   离线执行和资源一致性测试
 output/                  本地任务产物，Git 忽略

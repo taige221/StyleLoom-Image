@@ -6,6 +6,8 @@ A reusable image creation skill with **30 visual styles**, **6 image formats**, 
 
 An agent reads [SKILL.md](SKILL.md), selects the relevant style and format, and prepares a complete prompt. The Python runner sends the prepared job to the configured image API and saves the original image, prompt, parameters, and available usage/cost metadata.
 
+Browse the [30-style image gallery](examples/style-gallery.md): one representative image per preset, labeled with the model and prompt revision, with links to the current English style prompts.
+
 ## What it supports
 
 - Text-to-image, reference-guided generation, and edits that preserve specified parts of the source.
@@ -101,7 +103,7 @@ agents/                  Optional skill UI metadata
 skill/                   30 complete visual style presets
 formats/                 6 independent image-format presets
 scripts/generate.py      Configurable image API runner
-examples/                Blank connection template and prepared jobs
+examples/                Style gallery, representative images, and job examples
 references/              Execution details, test prompts, validation summary
 tests/                   Offline execution and resource tests
 output/                  Local run artifacts; ignored by Git
