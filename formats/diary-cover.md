@@ -1,12 +1,16 @@
 ---
 id: diary-cover
 name: 日记封面
-version: 1
+version: 2
 ---
 
 # 日记封面
 
-## 组织规则
+## Layout prompt (English, primary)
+
+Use a portrait 3:4 canvas by default, adapting to any requested landscape layout or other dimensions. Organize the main artwork separately from the title area. If no title position is specified, reserve roughly the upper third as a quiet, continuous area and place the main content elsewhere without obscuring faces or key actions. Render text only when the user supplies it, preserving every character, line, and date exactly. If only space for a title is requested, leave it blank rather than inventing a title, author, date, or decorative lettering. Follow the specified content and chosen style for the background; a paper appearance does not imply an alpha-transparent file. Do not add a physical book, binding, or cover mockup. Preserve all specified subjects and events when adapting the crop and negative space.
+
+## 中文参照（不用于拼接）
 
 - 默认竖向 3:4，主要画面与标题区域分开组织；用户指定横版或其他尺寸时相应调整。
 - 未指定标题位置时，上部约三分之一留出安静、连续的空间，主要内容安排在其余区域；不遮挡人物脸部或关键动作。

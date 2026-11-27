@@ -1,12 +1,16 @@
 ---
 id: wallpaper
 name: 壁纸
-version: 1
+version: 2
 ---
 
 # 壁纸
 
-## 组织规则
+## Layout prompt (English, primary)
+
+For a phone wallpaper, default to portrait 9:16; for a desktop wallpaper, default to landscape 16:9. The user's actual screen dimensions and aspect ratio take priority. With no device cue, use phone 9:16 as an overridable fallback and state that choice briefly. Leave quiet areas appropriate for clocks, icons, or other interface overlays. For a phone lock screen with no specified layout, keep roughly the upper quarter quiet and place the main content in the middle and lower area without deleting specified subjects. Keep identifying features away from edges vulnerable to cropping. Extend the composition as needed, but do not invent locations, weather, people, or events. Do not render a device frame, system interface, clock digits, icons, or text unless requested. The layout does not require landscapes or any particular style. Set dimensions according to the selected model's capabilities, and do not present upscaling as native high-resolution generation.
+
+## 中文参照（不用于拼接）
 
 - 明确手机时默认竖向 9:16，明确桌面或电脑时默认横向 16:9；用户指定的实际屏幕尺寸与画幅优先。
 - 没有设备线索时，以手机 9:16 为可覆盖的兜底，并用一句话说明选择，不要求用户每次填写完整参数。

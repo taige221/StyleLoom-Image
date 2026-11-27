@@ -3,7 +3,7 @@ id: "02"
 type: retro-color-film
 name: 复古彩色胶片
 group: 摄影与影像
-version: 1
+version: 2
 status: draft
 ---
 
@@ -11,7 +11,11 @@ status: draft
 
 由外层 [SKILL.md](../SKILL.md) 选择后按需读取；共享内容约束、图片类型、参考图处理、工具调用与留档规则由外层负责。
 
-## 风格提示词
+## Style prompt (English, primary)
+
+Render the specified content with a vintage color-film photographic appearance. Keep forms and materials credible, with restrained film-like color response, gentle highlight roll-off, and readable shadow detail. Integrate fine grain and slight optical softness without losing key details. Build the film character through color response, tonal transitions, and grain together, rather than a yellow cast, scratches, or a faded overlay. The vintage treatment applies to imaging, not to the era of the subjects or setting.
+
+## 中文参照（不用于拼接）
 
 将指定内容呈现为复古彩色胶片摄影观感。保持可信的形态和材质，色彩经过克制的胶片式处理，高光过渡柔和，暗部保留层次。细颗粒与轻微成像柔化融入画面，既有质感，也保持关键细节清楚。通过色彩响应、明暗过渡和颗粒共同形成胶片感，避免只靠泛黄、划痕或褪色覆盖画面。
 

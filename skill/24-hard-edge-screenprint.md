@@ -3,7 +3,7 @@ id: "24"
 type: hard-edge-screenprint
 name: 硬边丝网版画
 group: 图形与印刷
-version: 1
+version: 2
 status: draft
 ---
 
@@ -11,7 +11,11 @@ status: draft
 
 由外层 [SKILL.md](../SKILL.md) 选择后按需读取；共享内容约束、图片类型、参考图处理、工具调用与留档规则由外层负责。
 
-## 风格提示词
+## Style prompt (English, primary)
+
+Render the specified content with a hard-edge screenprint appearance. Simplify forms into sharply bounded, strongly covering solid color shapes. Use bold graphic relationships, local halftones, and negative space to express tone and depth. Shape boundaries, light-dark relationships, and limited detail should establish the visual focus, with restrained print texture. Avoid watercolor-like bleeding and a Riso appearance dominated by granular translucent overprints. Do not automatically change the aspect ratio or add poster headings or promotional copy.
+
+## 中文参照（不用于拼接）
 
 将指定内容表现为硬边丝网版画观感。以边界明确、覆盖性强的实色色块概括形体，利用强图形关系、局部网点和留白表达明暗及空间。色块边缘、黑白关系与有限细节共同建立视觉重心，表面保留克制的印刷质感。避免透明水彩式晕染，以及颗粒叠色主导的 Riso 外观。
 

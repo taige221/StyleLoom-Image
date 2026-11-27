@@ -3,7 +3,7 @@ id: "23"
 type: riso-overprint
 name: Riso 套色印刷
 group: 图形与印刷
-version: 1
+version: 2
 status: draft
 ---
 
@@ -11,7 +11,11 @@ status: draft
 
 由外层 [SKILL.md](../SKILL.md) 选择后按需读取；共享内容约束、图片类型、参考图处理、工具调用与留档规则由外层负责。
 
-## 风格提示词
+## Style prompt (English, primary)
+
+Render the specified content as a Riso overprint illustration. Use a limited set of ink colors that respects the specified color requirements, with color overprints, fine ink grain, and paper texture creating depth. Overlapping ink layers should participate in form and tonal modeling. Allow slight registration offsets while keeping essential contours, identifying features, and required text readable. Avoid glossy volume, photorealistic reflections, and uniform distressed noise over the whole image. Grain and overlapping colors should distinguish this treatment from hard-edged opaque screenprint shapes.
+
+## 中文参照（不用于拼接）
 
 将指定内容表现为 Riso 套色印刷观感的插画。采用满足指定颜色要求的有限套色，通过颜色叠印、细微油墨颗粒和纸面质感形成层次。色层交叠参与形体及明暗表达，可有轻微套印偏移，但关键轮廓和文字保持可读。避免厚重光泽、写实反射及全画面均匀覆盖的做旧噪点。
 

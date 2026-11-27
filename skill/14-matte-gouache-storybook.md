@@ -3,7 +3,7 @@ id: "14"
 type: matte-gouache-storybook
 name: 哑光水粉绘本
 group: 手绘
-version: 1
+version: 2
 status: draft
 ---
 
@@ -11,7 +11,11 @@ status: draft
 
 由外层 [SKILL.md](../SKILL.md) 选择后按需读取；共享内容约束、图片类型、参考图处理、工具调用与留档规则由外层负责。
 
-## 风格提示词
+## Style prompt (English, primary)
+
+Render the specified content as a matte gouache storybook illustration. Moderately simplify forms and model volume with opaque covering color shapes, considered color relationships, and simplified shadows. Retain dry-brush marks, layered paint, and natural painted edges, with modest paper texture. Keep subjects and environment consistent in color masses, brush scale, and lighting. Avoid plastic highlights, smooth digital gradients, and indiscriminate detail. Storybook treatment does not require children, fairy-tale events, or fantasy props.
+
+## 中文参照（不用于拼接）
 
 将指定内容表现为哑光水粉绘本插画。形体适度概括，采用覆盖性明确的不透明色块，通过颜色关系和概括阴影表达体积。保留干刷、叠色和自然笔触边缘，纸面纹理适度可见。主体与环境在色块、笔触尺度和光照上保持统一，避免塑料高光、光滑数码渐变及无差别的细节堆积。
 

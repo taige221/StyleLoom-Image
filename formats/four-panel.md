@@ -1,12 +1,16 @@
 ---
 id: four-panel
 name: 四格漫画
-version: 1
+version: 2
 ---
 
 # 四格漫画
 
-## 组织规则
+## Layout prompt (English, primary)
+
+Use a square canvas with exactly four clearly separated panels in a 2x2 layout by default; follow any explicitly requested alternative arrangement. The default reading order is top left, top right, bottom left, bottom right. Keep each panel readable with clear gutters, without adding panel numbers unless requested. Divide the supplied event into four consecutive moments, preserving causality and changes in object state. Do not invent characters, key actions, accidents, or an ending just to fill the panels. If a missing story beat materially affects the result, clarify it unless the user has permitted creative completion. Keep identities, markings, clothing, objects, and setting consistent unless a change is specified. Include captions, dialogue, and sound effects only as requested, preserving supplied text verbatim and keeping it clear of essential actions. Apply one coherent chosen style across all four panels; the panel layout does not imply black-and-white manga.
+
+## 中文参照（不用于拼接）
 
 - 默认正方形画布，明确的 2×2 四格；用户指定纵向四格或其他排列时覆盖默认值。
 - 默认阅读顺序为左上、右上、左下、右下；清楚的分格和适量间隔保持每格独立可读，不自动加入编号。

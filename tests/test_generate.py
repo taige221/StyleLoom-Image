@@ -90,13 +90,15 @@ class GenerateTests(unittest.TestCase):
     def test_openrouter_reference_order_roles_and_real_mime(self):
         (self.root / "source.jpg").write_bytes(raster("JPEG"))
         (self.root / "source.png").write_bytes(raster())
-        self.job({"prompt": "保持人物，只换构图", "references": [{"path": "source.jpg", "role": "仅人物身份"}, {"path": "source.png", "role": "仅构图"}]})
+        prompt = 'Preserve the identity and change the composition. Render this text verbatim: "今天也很喜欢你".'
+        self.job({"prompt": prompt, "references": [{"path": "source.jpg", "role": "Identity only"}, {"path": "source.png", "role": "Composition only"}]})
         with patch.object(generate, "http", return_value=self.response()) as call:
             result = generate.execute(self.args, self.env)
         payload = json.loads(call.call_args.args[2])
         self.assertTrue(payload["input_references"][0]["image_url"]["url"].startswith("data:image/jpeg;base64,"))
         self.assertTrue(payload["input_references"][1]["image_url"]["url"].startswith("data:image/png;base64,"))
-        self.assertIn("图 1：仅人物身份\n图 2：仅构图", payload["prompt"])
+        self.assertTrue(payload["prompt"].startswith(prompt + "\n\n"))
+        self.assertIn("Input image roles (in the supplied order):\nImage 1: Identity only\nImage 2: Composition only", payload["prompt"])
         self.assertEqual((self.out / "prompt.md").read_text().strip(), payload["prompt"])
         self.assertEqual(result["reference_count"], 2)
 

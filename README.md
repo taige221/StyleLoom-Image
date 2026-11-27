@@ -14,7 +14,7 @@ An agent reads [SKILL.md](SKILL.md), selects the relevant style and format, and 
 - Configurable OpenRouter Images and OpenAI-compatible Images protocols, including compatible proxies and local servers.
 - Local-only image delivery by default. No generated image or base64 payload is printed into the conversation.
 
-There is **no built-in default model, API address, or protocol selection**. Other native API protocols need their own adapter. The runner executes JSON jobs; natural-language interpretation and preset selection belong to the agent. The current presets and detailed operational references are written in Chinese.
+There is **no built-in default model, API address, or protocol selection**. Other native API protocols need their own adapter. The runner executes JSON jobs; natural-language interpretation and preset selection belong to the agent. Style and format presets use English primary prompts with Chinese reference text. The agent composes execution prompts and reference roles in English by default, while preserving required on-image text verbatim in its original language. Operational references remain in Chinese; the runner does not translate inputs.
 
 ## Setup
 
@@ -87,7 +87,7 @@ python -m unittest discover -s tests -v
 
 Tests cover execution, configuration, reference ordering, format metadata, preset/index consistency, portable documentation links, and the packaged examples. They use synthetic tiny fixtures and mocked image services; they do not spend credits or load the experimental artwork into the conversation.
 
-The earlier Seedream 5.5 study generated all 30 style cases and 18 capability cases, plus supporting reference material. The user found the overall style separation suitable for a first version. That study used a separate experimental runner; it is not live-provider validation of the current configurable runner. See the portable [validation summary](references/test-results.md) and [test prompt suite](references/test-prompts.md).
+The earlier Seedream 5.5 study generated all 30 style cases and 18 capability cases, plus supporting reference material. The user found the overall style separation suitable for a first version. A later targeted comparison used the configurable runner for five Seedream 5.5 images and three GPT Image 2.6 Sunburst images with Chinese candidate prompts. Ten revised version 2 English styles have since been visually tested in a new gardening scene with Seedream 5.5: five were considered style candidates, three partly matched, and two still missed their core requirements. A same-prompt Sunburst comparison of five of those styles improved 06, 20, and 25 to style candidates; 30 remained partial and 27 still missed multi-view reconstruction. These are single-image observations at different quality settings, with content issues recorded separately; the other 20 English styles remain visually untested. See the portable [validation summary](references/test-results.md) and [test prompt suite](references/test-prompts.md).
 
 ## Project layout
 

@@ -2,6 +2,8 @@
 
 先由加载 Skill 的 AI 理解用户内容、按需读取风格预设、解决明确冲突，再编写最终提示词和任务文件。`scripts/generate.py` 只执行任务，不选择风格、不补写用户情节、不调用其他语言模型。
 
+风格与用途文件中的英文主提示词是执行依据，中文仅作参照，不重复发送。默认以英文编写 `prompt` 和参考图 `role`；用户原始请求可保留中文，要求出现在画面中的文字须逐字保留原语言。脚本不自动翻译或改写这些字段。
+
 代码不包含默认模型、默认 API 服务地址或默认接口类型，也不自动读取某款聊天工具的私有凭据目录。连接必须来自环境变量、外部 JSON 或单次命令行参数。Seedream 5.5 是之前测试所选模型，不是执行器的默认值。
 
 ## 1. 选择接口协议
@@ -68,14 +70,14 @@ API 根地址包含供应商要求的版本前缀，但不包含表中具体方�
     "id": "14",
     "type": "matte-gouache-storybook",
     "name": "哑光水粉绘本",
-    "version": 1
+    "version": 2
   },
   "format": {
     "id": "scene-illustration",
     "name": "场景插画",
-    "version": 1
+    "version": 2
   },
-  "prompt": "两个人坐在沙发上一起追剧，氛围温馨。单幅横向画面，中景同时呈现两人和沙发。采用哑光水粉绘本画法，以不透明色块、概括阴影、干刷和自然笔触边缘塑造形体，纸纹适度可见，主体与环境的笔触和光照统一。避免塑料高光和平滑数码渐变。不添加其他人物、宠物、标题、logo或水印。",
+  "prompt": "Two people sit on the same sofa watching a show together, with a warm atmosphere. Use a single landscape medium shot showing both people and the sofa. Render the scene as a matte gouache storybook illustration, building forms with opaque color shapes, simplified shadows, dry-brush marks, and natural painted edges. Keep paper texture modest and unify the subjects and environment through consistent brush scale, color masses, and lighting. Avoid plastic highlights and smooth digital gradients. No extra people, pets, titles, logos, or watermarks.",
   "references": [],
   "parameters": {
     "n": 1,
@@ -91,8 +93,8 @@ API 根地址包含供应商要求的版本前缀，但不包含表中具体方�
 - 例如同一横向任务改用支持这些字段的 OpenRouter 模型时，可将上述 parameters 替换为 `{"n": 1, "resolution": "1K", "aspect_ratio": "4:3", "output_format": "png"}`。模型及地址仍从外部连接配置选择；画幅和尺寸要求应覆盖与它们冲突的连接默认参数。
 - 本版每次支持请求 1—10 张，默认一次 1 张；异步任务、流式响应、动画、矢量和遮罩字段尚未实现。模型自身数量限制可能更低。
 - 透明底明确指定 `background: transparent` 和兼容的 PNG/WebP 输出；脚本检查真实透明像素与可见像素。只检查文件和通道，不判断主体边缘质量。
-- `references` 中每项为 `{"path": "本地路径", "role": "本次用途与保留项"}`。相对路径以输入任务文件所在目录为基准；每张限 50MB，支持 PNG/JPEG/WebP。实际数量以模型能力为准。
-- 参考图顺序固定。脚本将用途说明附加到最终提示词，再按相同顺序传入实际文件；`prompt.md` 保存真正发送的最终文本，`request-metadata.json` 保存实际来源和哈希。
+- `references` 中每项为 `{"path": "local/path.png", "role": "English description of this input's role and required features"}`。相对路径以输入任务文件所在目录为基准；每张限 50MB，支持 PNG/JPEG/WebP。实际数量以模型能力为准。
+- 参考图顺序固定。脚本以英文标签 `Image 1:`、`Image 2:` 将用途说明原样附加到最终提示词，再按相同顺序传入实际文件；不会翻译 `role`。`prompt.md` 保存真正发送的最终文本，`request-metadata.json` 保存实际来源和哈希。
 - 有参考图的新图任务，在 OpenAI 兼容协议中也走文件上传的 `/images/edits` 路径；任务的生成/修改意图仍保留在 mode 和提示词中。
 - 提供修改目标时，提示词明确“只改什么、哪些保持不变”，不能只靠 `mode: edit` 表达保留要求。
 

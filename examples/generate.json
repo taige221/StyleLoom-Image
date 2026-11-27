@@ -5,14 +5,14 @@
     "id": "14",
     "type": "matte-gouache-storybook",
     "name": "哑光水粉绘本",
-    "version": 1
+    "version": 2
   },
   "format": {
     "id": "avatar",
     "name": "头像",
-    "version": 1
+    "version": 2
   },
-  "prompt": "一只灰白短毛猫的正方形头像，只有这一只猫，取景突出脸部和耳朵，轮廓清楚，四周留适量空间，便于圆形裁切。背景简洁，不添加其他动物、人物、饰品、文字、logo或水印。采用哑光水粉绘本画法：以覆盖性明确的不透明色块和概括阴影塑造形体，保留干刷、叠色和自然笔触边缘，纸面纹理适度可见；主体与背景的色块、笔触尺度和光照统一，避免塑料高光、光滑数码渐变及无差别细节堆积。",
+  "prompt": "Create a square avatar of exactly one gray-and-white short-haired cat. Emphasize its face and ears with a clear silhouette and enough margin for a circular crop. Use a simple background. Do not add animals, people, accessories, text, logos, or watermarks. Render it as a matte gouache storybook illustration: build form with opaque covering color shapes and simplified shadows, retaining dry-brush marks, layered paint, natural painted edges, and modest paper texture. Keep the subject and background consistent in color masses, brush scale, and lighting. Avoid plastic highlights, smooth digital gradients, and indiscriminate detail.",
   "references": [],
   "parameters": {
     "n": 1,

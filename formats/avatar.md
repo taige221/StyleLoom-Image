@@ -1,12 +1,16 @@
 ---
 id: avatar
 name: 头像
-version: 1
+version: 2
 ---
 
 # 头像
 
-## 组织规则
+## Layout prompt (English, primary)
+
+Use a square 1:1 canvas by default, centered on the identifying features of the specified person, animal, or other subject. Choose framing and clear silhouettes that remain readable at small sizes. Leave enough space for a circular crop to retain important facial features, ears, and distinguishing marks; an explicitly requested crop takes priority. For a multi-subject avatar, preserve the specified count and make each subject recognizable. Follow the requested background; otherwise use a simple background without inventing a location, decoration, border, or text. Set real transparency and a compatible output format separately when requested; an avatar is not inherently transparent. Let the chosen style determine proportions, facial simplification, and materials. Resolve any conflict between abstraction and required identity before generation.
+
+## 中文参照（不用于拼接）
 
 - 默认正方形 1:1，以用户指定人物、动物或其他主体的辨识特征为重心。
 - 采用适合小尺寸识别的取景和清楚轮廓；在四周留适量空间，使圆形裁切不切掉关键五官、耳朵或主要标志。用户明确要求的特殊裁切优先。

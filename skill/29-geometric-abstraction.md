@@ -3,7 +3,7 @@ id: "29"
 type: geometric-abstraction
 name: 几何抽象构成
 group: 艺术绘画
-version: 1
+version: 2
 status: draft
 ---
 
@@ -11,13 +11,17 @@ status: draft
 
 由外层 [SKILL.md](../SKILL.md) 选择后按需读取；共享内容约束、图片类型、参考图处理、工具调用与留档规则由外层负责。
 
-## 风格提示词
+## Style prompt (English, primary)
 
-将指定内容中的形体、方向和相互关系提炼为几何形与色块，以比例、间距、方向、疏密和色彩张力建立构成。默认保留能够关联原内容的结构锚点，抽象程度服从用户要求。通过几何关系组织整体，而非给写实对象添加几何装饰；避免无依据地堆放图形或改变明确要求保留的关系。
+Translate the specified content into geometric abstraction organized by shape, color, proportion, spacing, direction, density, and negative space. Preserve the structural anchors that connect the composition to the requested content, such as grouping, support, adjacency, or a shared orientation, without automatically retaining complete figures or recognizable furniture silhouettes. Let a small number of related geometric masses carry those relationships. Omit anatomy, facial features, clothing detail, and object construction unless the user explicitly requires them; preserve required identifying cues and resolve incompatible abstraction demands before generation. Use color values and overlapping planes rather than realistic volume. The degree of abstraction follows the request. Avoid a fully described figurative scene merely divided into polygons, decorative geometry around realistic objects, and unrelated piles of shapes.
+
+## 中文参照（不用于拼接）
+
+将指定内容提炼为由形、色、比例、间距、方向、疏密与负空间组织的几何抽象。保留关联原内容的分组、支撑、邻接或共同朝向等结构锚点，不默认保留完整人物或可逐件识别的家具剪影。用少量关联几何形群承担关系表达，用户未明确要求时可省略解剖、五官、服装细节和物件构造；明确指定的辨识点仍须保留，抽象要求冲突时先处理取舍。以色值和交叠平面组织画面，不追求写实体积。抽象程度服从用户要求，避免把完整具象场景切成多边形、给写实对象贴几何装饰或堆放无关图形。
 
 ## 核心关系
 
-几何形与色块之间的比例、间距和方向关系承担主要表达。
+关联原内容的结构锚点由几何形群、色块、间距、方向和负空间承担。
 
 ## 使用边界
 

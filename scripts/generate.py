@@ -195,7 +195,7 @@ def prepare(job_path, config):
         refs.append({"path": str(path), "role": reference["role"], "mime_type": mime, **info, "blob": blob})
     prompt = job["prompt"].strip()
     if refs:
-        prompt += "\n\n输入图用途（与实际输入顺序一致）：\n" + "\n".join(f"图 {i + 1}：{ref['role']}" for i, ref in enumerate(refs))
+        prompt += "\n\nInput image roles (in the supplied order):\n" + "\n".join(f"Image {i + 1}: {ref['role']}" for i, ref in enumerate(refs))
     return job, prompt, parameters, refs
 
 

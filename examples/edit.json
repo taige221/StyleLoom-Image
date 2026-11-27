@@ -4,11 +4,11 @@
   "style": {
     "type": "preserve-source"
   },
-  "prompt": "只把输入图中唯一的陶瓷杯杯身和杯柄改成纯蓝色，保留原来的材质与受光。杯子的形状、大小、位置、透视和把手结构保持不变，其他物件、背景、构图、原图文字和表现风格保持不变。不添加或移除其他内容。",
+  "prompt": "Change only the body and handle of the single ceramic cup in the input image to solid blue, preserving its original material and illumination. Keep its shape, size, position, perspective, and handle structure unchanged. Preserve all other objects, the background, composition, original text, and visual style. Do not add or remove anything else.",
   "references": [
     {
       "path": "../tmp/reference.png",
-      "role": "修改目标；须包含一个无歧义的陶瓷杯，仅修改该杯的颜色"
+      "role": "Edit target: the source must contain one unambiguous ceramic cup; change only that cup's color."
     }
   ],
   "parameters": {

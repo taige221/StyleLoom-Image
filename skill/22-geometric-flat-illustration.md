@@ -3,7 +3,7 @@ id: "22"
 type: geometric-flat-illustration
 name: 几何扁平插画
 group: 图形与印刷
-version: 1
+version: 2
 status: draft
 ---
 
@@ -11,13 +11,17 @@ status: draft
 
 由外层 [SKILL.md](../SKILL.md) 选择后按需读取；共享内容约束、图片类型、参考图处理、工具调用与留档规则由外层负责。
 
-## 风格提示词
+## Style prompt (English, primary)
 
-将指定内容表现为几何扁平插画。用清楚的剪影、概括形状和统一色块表达对象，通过遮挡、大小和色彩关系区分层次。轮廓处理保持一致，减少连续体积阴影与表面纹理，让形状和色块共同承担主要信息。保留主体辨识点，避免为装饰而添加无关圆形、线条或图案。
+Render the specified content as geometric flat illustration. Express objects through recognizable silhouettes, simplified geometric shapes, and uniform color fills. Separate layers with overlap, relative size, and color relationships rather than continuous volumetric shading. Keep contour treatment consistent across subjects and any background; use only limited discrete shadow shapes when needed for legibility. Reduce surface grain, brush texture, photographic blur, and smooth light gradients so shape and color carry the main information. Preserve identifying features without adding unrelated circles, lines, patterns, or other geometric decorations.
+
+## 中文参照（不用于拼接）
+
+将指定内容表现为几何扁平插画。用可辨认剪影、概括几何形与统一色块表达对象，以遮挡、相对大小和色彩关系区分层次，减少连续体积阴影。主体与背景的轮廓处理一致，只在辨识需要时使用少量分段阴影。减少表面颗粒、笔触、摄影式虚化与平滑光照渐变，让形状和色彩承担主要信息。保留辨识点，不添加无关圆形、线条、图案或几何装饰。
 
 ## 核心关系
 
-可辨认剪影、概括形状和统一色块共同表达对象与层次。
+可辨剪影、概括几何形与统一色块承担信息，遮挡与色彩区分层次。
 
 ## 使用边界
 
